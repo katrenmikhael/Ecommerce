@@ -1,0 +1,42 @@
+<section class="cart">
+ <div class="container rounded rounded-3">
+
+  <h2>Shop Cart</h2>
+  <span class="text-main">total price: {{cartItems?.totalCartPrice}} EGP</span>
+
+  <div class="products" *ngFor="let product of cartItems?.products">
+   <div class="row">
+    <div class="product-container col-md-9">
+      <div class="product-details d-flex align-items-center">
+        <div class="img-frame w-25 h-100 p-3 ">
+          <img [src]="product.product.imageCover" class="rounded rounded-3 w-100 h-50"  alt="product-img">
+        </div>
+        <div class="product-info">
+          <h5>{{product.product.title}}</h5>
+          <p class="text-main pt-3">Price: {{product.price}} EGP</p>
+          <div class="remove-sec pt-3" (click)="updateCart(product.product._id,0)">
+            <i class="fa-solid fa-trash-can text-main"></i>
+            Remove
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="update-sec col-md-3 d-flex align-items-center">
+      <div class="btns">
+        <span class="text-main p-2 rounded rounded-2 border border-1 me-3" (click)="updateCart(product.product._id,product.count+1)">+</span>
+        <span class="text-dark">{{product.count}}</span>
+        <span class="text-main p-2 rounded rounded-2 border border-1 ms-3" (click)="updateCart(product.product._id,product.count-1)">-</span>
+      </div>
+    </div>
+   </div>
+
+  </div>
+  <div class="pay-btns text-center">
+    <a [routerLink]="['/shippingAddress',cartItems?._id]" class="btn bg-main text-white me-2">Pay By Visa <img src="./assets/mastercard.png" width="20px" height="20px" alt="paypal-icon"></a>
+    <a [routerLink]="['/shippingAddress',cartItems?._id]" class="btn bg-main text-white ms-2">Pay Cash <i class="fa-solid fa-money-bill-wave"></i></a>
+  </div>
+
+ </div>
+
+</section>

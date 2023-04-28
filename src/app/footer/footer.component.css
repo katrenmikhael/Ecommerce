@@ -1,0 +1,13 @@
+.line {
+  width: 93%;
+  height: 1px;
+  background-color: rgb(227, 223, 223);
+}
+.left-sec img {
+  width: 40px;
+  height: 40px;
+}
+.right-sec img {
+  width: 80px;
+  height: 40px;
+}

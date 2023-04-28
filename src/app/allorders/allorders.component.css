@@ -1,0 +1,7 @@
+.cart {
+  border: 1px solid #0aad0a !important;
+  border-radius: 5px;
+}
+.cart:hover {
+  box-shadow: var(--shadow);
+}
